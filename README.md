@@ -1,16 +1,25 @@
-# React + Vite
+# Meetra Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Meetra Web** is a real-time video calling and chat web application built with **React**, **Express**, and **Socket.io**. It enables users to join meetings as guests or via authentication, providing seamless video communication, instant messaging, and user management. The app leverages **MongoDB** for data storage and **WebRTC** for real-time video streaming.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Real-time Video Calls**: Join meetings with multiple participants using WebRTC.
+- **Instant Messaging**: Send and receive messages in real-time during meetings.
+- **Guest Access & Authentication**: Join meetings as a guest or through secure login.
+- **User Management**: Manage users and meetings efficiently with MongoDB.
+- **Responsive UI**: Clean and responsive interface built with React.
+- **Socket.io Integration**: Real-time communication for chat and call events.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React, Tailwind CSS (or your CSS framework)
+- **Backend**: Node.js, Express.js
+- **Real-time Communication**: Socket.io, WebRTC
+- **Database**: MongoDB
+- **Authentication**: session-based 
+- **Other Tools**: dotenv for environment variables, nodemon for development
