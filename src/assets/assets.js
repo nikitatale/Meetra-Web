@@ -1,8 +1,10 @@
-import background from './background.png'
-import chatlogo from './chat-logo.png'
-import logo3 from './logo3.png'
-import messagerVC from './messenger-video-call2.png'
-import wallpaper from './wallpaper.jpg'
+import background from './background.png';
+import chatlogo from './chat-logo.png';
+import logo3 from './logo3.png';
+import messagerVC from './messenger-video-call2.png';
+import wallpaper from './wallpaper.jpg';
+import groupImage from './group-image.png';
+import peoples from './peoples.avif'
 
 
 
@@ -11,5 +13,7 @@ export const assets = {
     chatlogo,
     logo3,
     messagerVC,
-    wallpaper
+    wallpaper,
+    groupImage,
+    peoples
 }

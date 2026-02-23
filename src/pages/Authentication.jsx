@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { assets } from '../assets/assets'
 import { useNavigate } from "react-router-dom"
-import { ArrowLeft } from "lucide-react"
 import { AuthContext } from '../contexts/AuthContext'
+import Loader from '../components/Loader'
 
 const Authentication = () => {
 
@@ -10,21 +10,20 @@ const Authentication = () => {
   const { handleLogin, handleRegister } = useContext(AuthContext)
 
   const [isSignup, setIsSignup] = useState(false)
-
   const [fullname, setFullname] = useState("")
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError("")
+    setLoading(true)
 
     try {
       if (isSignup) {
-        const result = await handleRegister(fullname, username, password)
-
-      
+        await handleRegister(fullname, username, password)
         setFullname("")
         setUsername("")
         setPassword("")
@@ -32,109 +31,127 @@ const Authentication = () => {
       } else {
         await handleLogin(username, password)
       }
-
     } catch (err) {
       const message = err?.response?.data?.message || "Something went wrong"
       setError(message)
+    } finally {
+      setLoading(false)
     }
   }
 
+  if (loading) {
+    return <Loader />
+  }
+
   return (
-    <div className='bg-[#020319] min-h-screen'>
+    <div className='bg-[#020319] min-h-screen flex items-center justify-center px-4'>
 
-      <div
-        onClick={() => navigate("/")}
-        className="flex items-center gap-2 px-6 pt-6 text-gray-300 cursor-pointer hover:text-indigo-400 transition duration-200 w-fit"
-        
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-sm 
+        px-5 py-6 
+        bg-white/5 backdrop-blur-xl 
+        border border-white/10 
+        rounded-xl 
+        shadow-lg 
+        space-y-4"
       >
-        <ArrowLeft size={22} />
-        <span className="text-sm font-medium">Back to Home</span>
-      </div>
 
-      <main className="flex items-center justify-center w-full px-4">
-        <form
-          onSubmit={handleSubmit}
-          className="flex w-full flex-col max-w-96 mt-10 px-4 py-6"
-          style={{boxShadow: "0 4px 8px rgba(0,0,0,0.5)"}}
-        >
+      
+        <div className='flex justify-between items-center'>
+          <h2 className="text-3xl font-semibold text-gray-100">
+            {isSignup ? "Sign Up" : "Sign In"}
+          </h2>
+          <img src={assets.chatlogo} alt="logo" width={36} />
+        </div>
 
-          <div className='flex justify-between'>
-            <h2 className="text-4xl text-start font-medium text-gray-100">
-              {isSignup ? "Sign Up" : "Sign in"}
-            </h2>
-            <img src={assets.chatlogo} alt="logo" width={40} />
-          </div>
+        <p className="text-sm text-gray-400/80">
+          {isSignup
+            ? "Create your account to get started."
+            : "Enter username and password to continue."}
+        </p>
 
-          <p className="mt-4 text-base text-start text-gray-400/90">
-            {isSignup
-              ? "Create your account to get started."
-              : "Please enter username and password to access."}
-          </p>
-
-          {isSignup && (
-            <div className="mt-10">
-              <label className="font-medium text-gray-200">Full Name</label>
-              <input
-                value={fullname}
-                onChange={(e) => setFullname(e.target.value)}
-                placeholder="Enter your full name"
-                className="mt-2 text-gray-400 rounded-md ring ring-gray-200 focus:ring-2 focus:ring-indigo-600 outline-none px-3 py-3 w-full"
-                required
-                type="text"
-              />
-            </div>
-          )}
-
-          <div className={isSignup ? "mt-6" : "mt-10"}>
-            <label className="font-medium text-gray-200">Username</label>
+      
+        {isSignup && (
+          <div>
+            <label className="text-sm font-medium text-gray-200">Full Name</label>
             <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter your username"
-              className="mt-2 text-gray-400 rounded-md ring ring-gray-200 focus:ring-2 focus:ring-indigo-600 outline-none px-3 py-3 w-full"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+              placeholder="Enter your full name"
+              className="mt-1 w-full px-3 py-2 rounded-md 
+              bg-white/10 text-gray-200 
+              border border-white/10 
+              focus:outline-none focus:ring-2 focus:ring-indigo-600"
               required
               type="text"
             />
           </div>
+        )}
 
-          <div className="mt-6">
-            <label className="font-medium text-gray-200">Password</label>
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              className="mt-2 text-gray-400 rounded-md ring ring-gray-200 focus:ring-2 focus:ring-indigo-600 outline-none px-3 py-3 w-full"
-              required
-              type="password"
-            />
-          </div>
+      
+        <div>
+          <label className="text-sm font-medium text-gray-200">Username</label>
+          <input
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter your username"
+            className="mt-1 w-full px-3 py-2 rounded-md 
+            bg-white/10 text-gray-200 
+            border border-white/10 
+            focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            required
+            type="text"
+          />
+        </div>
 
-          {error && (
-            <p className="text-red-500 mt-4 text-sm">{error}</p>
-          )}
+      
+        <div>
+          <label className="text-sm font-medium text-gray-200">Password</label>
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+            className="mt-1 w-full px-3 py-2 rounded-md 
+            bg-white/10 text-gray-200 
+            border border-white/10 
+            focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            required
+            type="password"
+          />
+        </div>
 
-          <button
-            type="submit"
-            className="mt-8 py-3 w-full cursor-pointer rounded-md bg-indigo-600 text-white transition hover:bg-indigo-700"
+      
+        {error && (
+          <p className="text-red-500 text-sm">{error}</p>
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full py-2.5 rounded-md 
+          bg-indigo-600 text-white 
+          hover:bg-indigo-700 transition cursor-pointer
+          disabled:opacity-50"
+        >
+          {isSignup ? "Create Account" : "Login"}
+        </button>
+
+      
+        <p className='text-center text-sm text-gray-300 pt-2'>
+          {isSignup ? "Already have an account?" : "Don't have an account?"}
+          <span
+            onClick={() => {
+              setIsSignup(!isSignup)
+              setError("")
+            }}
+            className="text-indigo-500 hover:underline cursor-pointer ml-1"
           >
-            {isSignup ? "Create Account" : "Login"}
-          </button>
+            {isSignup ? "Sign In" : "Sign Up"}
+          </span>
+        </p>
 
-          <p className='text-center py-8 text-gray-200'>
-            {isSignup ? "Already have an account?" : "Don't have an account?"}
-            <span
-              onClick={() => {
-                setIsSignup(!isSignup)
-                setError("")
-              }}
-              className="text-indigo-600 hover:underline cursor-pointer ml-1"
-            >
-              {isSignup ? "Sign in" : "Sign up"}
-            </span>
-          </p>
-
-        </form>
-      </main>
+      </form>
     </div>
   )
 }

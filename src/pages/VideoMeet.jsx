@@ -522,7 +522,7 @@ let handleEndCall = () => {
     console.log(e);
   }
   // navigate("home"); 
-  window.location.href = "/"
+  window.location.href = "/home"
 };
 
   let openChat = () => {
@@ -613,7 +613,7 @@ let handleEndCall = () => {
             <button
                 onClick={connect}
                 type="button"
-                className="font-medium text-sm bg-indigo-500 hover:bg-indigo-600 text-white w-28 h-11 rounded-r-md  transition"
+                className="font-medium cursor-pointer text-sm bg-indigo-500 hover:bg-indigo-600 text-white w-28 h-11 rounded-r-md  transition"
             >
                 Connect 
             </button>
@@ -710,10 +710,36 @@ let handleEndCall = () => {
 
 
   {showModal && (
-    <div className="absolute right-0 top-0 h-full w-80 bg-white/10 backdrop-blur-xl border-l border-white/20 flex flex-col">
+  <>
+   
+    <div
+      className="fixed inset-0 bg-black/60 z-40 md:hidden"
+      onClick={() => setModal(false)}
+    ></div>
 
-      <div className="p-4 border-b border-white/20">
+    <div className="
+      fixed md:absolute
+      bottom-0 right-0
+      w-full md:w-80
+      h-[80%] md:h-full
+      bg-white/10 backdrop-blur-xl 
+      border-l border-white/20 
+      flex flex-col 
+      z-50
+      rounded-t-2xl md:rounded-none
+    ">
+
+    
+      <div className="p-4 border-b border-white/20 flex justify-between items-center">
         <h2 className="text-lg font-semibold">Chat</h2>
+
+      
+        <button
+          onClick={() => setModal(false)}
+          className="md:hidden text-white text-xl"
+        >
+          ✕
+        </button>
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
@@ -733,6 +759,7 @@ let handleEndCall = () => {
         )}
       </div>
 
+    
       <div className="p-3 border-t border-white/20 flex gap-2">
         <input
           value={message}
@@ -749,7 +776,8 @@ let handleEndCall = () => {
       </div>
 
     </div>
-  )}
+  </>
+)}
 
 </div>
 
