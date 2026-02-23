@@ -17,7 +17,7 @@
 
 ## Tech Stack
 
-- **Frontend**: React, Tailwind CSS (or your CSS framework)
+- **Frontend**: React, Tailwind CSS
 - **Backend**: Node.js, Express.js
 - **Real-time Communication**: Socket.io, WebRTC
 - **Database**: MongoDB
