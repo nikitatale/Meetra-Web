@@ -522,7 +522,7 @@ let handleEndCall = () => {
     console.log(e);
   }
   // navigate("home"); 
-  window.location.href = "/home"
+  window.location.href = "/history"
 };
 
   let openChat = () => {
