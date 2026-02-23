@@ -521,8 +521,8 @@ let handleEndCall = () => {
   } catch (e) {
     console.log(e);
   }
-  // navigate("home"); 
-  window.location.href = "/history"
+   navigate("/history"); 
+  // window.location.href = "/history"
 };
 
   let openChat = () => {
