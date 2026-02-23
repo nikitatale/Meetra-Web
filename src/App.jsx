@@ -10,7 +10,7 @@ import Features from './components/Features'
 import Pricing from './components/Pricing'
 import About from './components/About'
 import Navbar from './Navbar'
-import Footer from './Footer'
+
 
 const AppContent = () => {
 
