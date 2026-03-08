@@ -4,7 +4,7 @@
 
 **Real-time Video Calling & Chat Application**
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-8245ec?style=for-the-badge)](#)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-8245ec?style=for-the-badge)](https://meetra-web-frontend.onrender.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/nikitatale/Meetra-Web)
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
@@ -38,12 +38,13 @@ Meetra Web is a full-stack real-time communication platform — think a lightwei
 
 | Layer | Technology |
 |---|---|
-| Frontend | React, Tailwind CSS |
-| Backend | Node.js, Express.js |
-| Real-time | Socket.io, WebRTC |
-| Database | MongoDB |
-| Auth | Session-based authentication |
-| Dev Tools | Nodemon, dotenv |
+| Frontend | React, Vite, Tailwind CSS |
+| Backend | Node.js, Express v5 |
+| Real-time | Socket.io v4, WebRTC |
+| Database | MongoDB, Mongoose |
+| Auth | bcrypt, crypto |
+| Dev Tools | Nodemon, dotenv, ESLint |
+| Deployment | Render |
 
 ---
 
@@ -51,16 +52,16 @@ Meetra Web is a full-stack real-time communication platform — think a lightwei
 
 ```
 Meetra-Web/
-├── client/                 # React frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── App.jsx
-├── server/                 # Express backend
-│   ├── routes/
-│   ├── models/
-│   ├── socket/             # Socket.io logic
-│   └── index.js
+├── backend/
+│   └── src/
+│       └── app.js          # Express + Socket.io server
+├── src/                    # React frontend
+│   ├── components/
+│   └── pages/
+├── public/
+├── index.html
+├── vite.config.js
+├── package.json
 └── README.md
 ```
 
@@ -78,19 +79,16 @@ Meetra-Web/
 # Clone the repo
 git clone https://github.com/nikitatale/Meetra-Web.git
 cd Meetra-Web
+```
 
-# Install server dependencies
-cd server
-npm install
+### Backend Setup
 
-# Install client dependencies
-cd ../client
+```bash
+cd backend
 npm install
 ```
 
-### Environment Variables
-
-Create a `.env` file in `/server`:
+Create a `.env` file in `/backend`:
 
 ```env
 MONGO_URI=your_mongodb_connection_string
@@ -98,17 +96,29 @@ SESSION_SECRET=your_secret_key
 PORT=5000
 ```
 
-### Run the App
+```bash
+# Start backend
+npm run dev
+```
+
+### Frontend Setup
 
 ```bash
-# Start backend (from /server)
-npm run dev
-
-# Start frontend (from /client)
+# From root
+npm install
 npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 🚀 Deployment
+
+| Service | Link |
+|---|---|
+| Frontend | [meetra-web-frontend.onrender.com](https://meetra-web-frontend.onrender.com) |
+| Platform | Render |
 
 ---
 
