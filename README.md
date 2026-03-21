@@ -1,6 +1,6 @@
-# 🎥 Meetra Web — Real-Time Video Calling & Chat App
+# 🎥 Meetra Web - Real-Time Video Calling & Chat App
 
-> **A full-stack Google Meet alternative** — built with WebRTC, Socket.io, and the MERN stack.  
+> **A full-stack Google Meet alternative** - built with WebRTC, Socket.io, and the MERN stack.  
 > Live, low-latency video calls. Real-time chat. Guest & authenticated access. All in one.
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-meetra--web--frontend.onrender.com-blue?style=for-the-badge)](https://meetra-web-frontend.onrender.com)
@@ -11,7 +11,7 @@
 
 ## 🖼️ Demo Preview
 
-> 📸 *(Add a screenshot or GIF here — even a single screenshot increases recruiter engagement by 5x)*
+![Meetra Web Preview](meetra_preview.png)
 
 ---
 
@@ -119,11 +119,11 @@ Meetra-Web/
 
 ## 👩‍💻 About the Developer
 
-**Nikita Tale** — Full-Stack Developer specializing in MERN Stack  
+**Nikita Tale** - Full-Stack Developer specializing in MERN Stack  
 📧 Open to work! Let's connect →  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/nikita-tale)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?logo=github)](https://github.com/nikitatale)
 
 ---
 
-> ⭐ If you found this project interesting, please star it — it helps a lot!
+> ⭐ If you found this project interesting, please star it - it helps a lot!
