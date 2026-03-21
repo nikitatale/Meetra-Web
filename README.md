@@ -11,7 +11,7 @@
 
 ## 🖼️ Demo Preview
 
-![Meetra Web Preview](meetra_preview.png)
+![Meetra Web Preview](public/meetra_preview.png)
 
 ---
 
