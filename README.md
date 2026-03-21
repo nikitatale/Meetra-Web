@@ -110,7 +110,7 @@ Meetra-Web/
 
 ## 💡 Key Learnings & Challenges
 
-- Implemented **WebRTC peer connections** from scratch — handling ICE candidates, SDP offer/answer exchange
+- Implemented **WebRTC peer connections** from scratch - handling ICE candidates, SDP offer/answer exchange
 - Managed **Socket.io rooms** for isolated meeting sessions
 - Handled **concurrent real-time events** between multiple clients
 - Built **dual auth system** (guest token + full user authentication)
