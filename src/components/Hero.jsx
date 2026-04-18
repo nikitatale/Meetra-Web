@@ -196,7 +196,7 @@ const Hero = () => {
             className="text-slate-400 text-sm sm:text-base max-w-md mx-auto md:mx-0 leading-relaxed mb-8"
           >
             Whether you're working remotely, attending online classes, or connecting
-            with clients — Meetra makes every meeting smooth, secure, and stress-free.
+            with clients - Meetra makes every meeting smooth, secure, and stress-free.
           </motion.p>
 
       
