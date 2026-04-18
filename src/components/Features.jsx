@@ -10,7 +10,7 @@ const features = [
     iconColor: "#858AFF",
     iconBg: "rgba(84,91,248,0.12)",
     title: "Instant Video Meetings",
-    desc: "Start or join high-quality video calls in seconds. No complex setup — just enter your meeting code and connect instantly.",
+    desc: "Start or join high-quality video calls in seconds. No complex setup - just enter your meeting code and connect instantly.",
     glow: "rgba(84,91,248,0.2)",
   },
   {
@@ -26,7 +26,7 @@ const features = [
     iconColor: "#fb923c",
     iconBg: "rgba(251,146,60,0.1)",
     title: "Real-Time Chat",
-    desc: "Communicate instantly during meetings with built-in live chat. Send messages, share links — responsive on all devices.",
+    desc: "Communicate instantly during meetings with built-in live chat. Send messages, share links - responsive on all devices.",
     glow: "rgba(251,146,60,0.15)",
   },
 ];

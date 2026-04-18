@@ -196,19 +196,19 @@ export default function About() {
         <motion.p custom={1} variants={textVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}
           className="text-slate-400 text-sm leading-relaxed mb-4"
         >
-          Meetra is a modern video meeting platform designed to make online communication simple, secure, and seamless. Whether you're connecting with friends, collaborating with your team, or hosting professional meetings — every conversation feels effortless.
+          Meetra is a modern video meeting platform designed to make online communication simple, secure, and seamless. Whether you're connecting with friends, collaborating with your team, or hosting professional meetings - every conversation feels effortless.
         </motion.p>
 
         <motion.p custom={2} variants={textVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}
           className="text-slate-400 text-sm leading-relaxed mb-4"
         >
-          We believe virtual meetings should be fast to join, easy to manage, and accessible from anywhere. Meetra focuses on clean design, smooth performance, and reliable connectivity — so you never have to worry about the tech.
+          We believe virtual meetings should be fast to join, easy to manage, and accessible from anywhere. Meetra focuses on clean design, smooth performance, and reliable connectivity - so you never have to worry about the tech.
         </motion.p>
 
         <motion.p custom={3} variants={textVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}
           className="text-slate-500 text-sm leading-relaxed mb-8 italic"
         >
-          Our mission: empower people to connect anytime, anywhere — without technical barriers.
+          Our mission: empower people to connect anytime, anywhere - without technical barriers.
         </motion.p>
 
         <motion.div custom={4} variants={textVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}
